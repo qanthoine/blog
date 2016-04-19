@@ -1,0 +1,9 @@
+Projet Blog ANTHOINE Quentin
+
+Executer le fichier DB.sql pour créer les tables/données.
+Modifier includes/bdd.php pour la configuration MYSQL (par defaut :	Adresse : 127.0.0.1
+									Utilisateur : root
+									MdP : aucun		)
+
+Utilisateur panneau Admin : Admin
+Mot de passe : sandwitch

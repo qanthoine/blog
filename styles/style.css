@@ -1,0 +1,106 @@
+#menu
+{
+	border-radius: 5px;
+	border: 1px solid black;
+	float: left;
+	margin-right: 20px;
+	background-color: #fce5c3;
+	margin-left: 10px;
+	padding: 5px;	
+}
+#menu h3
+{
+	text-align: center;
+}
+div.body
+{
+	overflow: auto;
+	min-width: 160px;
+	margin-right: 10px;
+	padding: 10px;
+}	
+div.news
+{
+	border-radius: 5px;
+	margin: 2px;
+}
+div.news_contenu
+{
+	border-radius: 5px;
+	border: 1px solid green;
+	margin: 5px;
+	padding: 3px;
+}
+div.news_contenu h1
+{
+	text-align: center;
+}
+div.commentaires
+{
+	border-radius: 5px;
+	margin: 5px;
+}
+div.commentaires_contenu
+{
+	border-radius: 5px;
+	border: 1px solid green;
+	margin-bottom: 10px;
+}
+div.commentaires_contenu img
+{
+	border: 1px solid;
+    margin: 10px;
+    display: block;
+    font-size: 0;
+    float: left;
+}
+div.commentaires_contenu p
+{
+	border: 1px solid red;
+	margin-top: 10px;
+	min-height: 200px;
+	margin-left: 120px;
+	margin-right: 10px;
+	padding : 3px;
+}
+div.formulaire
+{
+	border-radius: 5px;
+	padding: 10px;
+	border: 1px solid yellow;
+	text-align: center;
+	margin-top: 5px;
+}
+div.formulaire textarea
+{
+	padding: 5px;
+	min-width: 95%;
+	max-width: 95%;
+	min-height: 50%;
+	max-height: 50%;
+}
+div.pagination
+{
+	border-radius: 5px;
+	border: 1px solid red;
+	text-align: center;
+	margin-top: 15px;
+	padding: 5px;
+	margin-bottom: 20px;
+}
+table
+{
+	text-align: center;
+    border-collapse: collapse;
+}
+td, th /* Mettre une bordure sur les td ET les th */
+{
+    border: 1px solid black;
+    padding : 8px;
+}
+.auteur
+{
+	font-size: 15px;
+	padding: 3px;
+	text-align: right;
+}
