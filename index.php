@@ -1,4 +1,3 @@
-<?php include ('/includes/session.php'); ?>
 <!DOCTYPE html>
 <html>
 
@@ -16,7 +15,7 @@
     <body>
 
     	<div class="body">
-    		<?php include ('includes/news.php'); ?>
+    		<?php include ('billets.php'); ?>
     	</div>
     	
     </body>

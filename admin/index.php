@@ -1,4 +1,4 @@
-<?php include ('../includes/session.php'); ?>
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html>
     <head>

@@ -1,13 +1,11 @@
 <?php
 include ('bdd.php');
 $id_billet_verif = htmlspecialchars($_POST['billet_id']);
-
 if(!empty($_POST['commentaire_ecris']) AND !empty($_POST['billet_id']))
 {
   $req = $bdd->query('SELECT prevalidation FROM admin');
   $cmts_val = $req->fetch();
   $valide = $cmts_val['prevalidation'];
-
   if(!empty($_POST['pseudo']))
   {
     $pseudo = $_POST['pseudo'];
@@ -24,7 +22,6 @@ if(!empty($_POST['commentaire_ecris']) AND !empty($_POST['billet_id']))
   {
     $email = '';
   }
-
   $pseudo_verif = ucfirst(htmlspecialchars($pseudo));
   $email_verif = htmlspecialchars($email);
   $cmts_verif = htmlspecialchars($_POST['commentaire_ecris']);
@@ -40,6 +37,6 @@ if(!empty($_POST['commentaire_ecris']) AND !empty($_POST['billet_id']))
 }
 else
 {
-  header('Location: ../commentaires.php?billet='.$id_billet_verif.'&erreur=1');
+header('Location: ../commentaires.php?billet='.$id_billet_verif.'&erreur=1');
 }
 ?>

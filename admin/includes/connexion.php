@@ -1,4 +1,5 @@
-<?php include ('../../includes/session.php'); 
+<?php 
+session_start();
 include ('../../includes/bdd.php');
 if(!isset($_SESSION['ndc']))
 {

@@ -1,6 +1,6 @@
 <?php
 include('../../includes/bdd.php');
-include('../../includes/session.php');
+session_start(); 
 if(isset($_SESSION['ndc']))
 {
 	if(isset($_GET['formulaire']) AND !empty($_GET['formulaire']) AND $_GET['formulaire'] > 0)
