@@ -8,7 +8,7 @@
 <title>Billets</title>    
 
 <?php 
-include ('../includes/header.php');
+include ('includes/ad_header.php');
 include ('includes/ad_menus.php'); 
 ?>
 </head>

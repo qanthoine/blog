@@ -7,7 +7,7 @@
 		<link rel="stylesheet" type="text/css" href="../styles/style.css"/>
 		<title>Commentaires</title>        
 		<?php 
-		include ('../includes/header.php');
+		include ('includes/ad_header.php');
 		include ('includes/ad_menus.php'); 
 		?>
 	</head>
