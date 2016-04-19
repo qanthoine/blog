@@ -9,7 +9,7 @@ if(isset($_SESSION['ndc']))
 <html>
 	<head>
 		<meta charset="utf-8" />
-		<link rel="stylesheet" type="text/css" href="../../styles/style.css"/>
+		<link rel="stylesheet" type="text/css" href="../styles/style.css"/>
 		<title>Liste des Billets</title>
 		<?php 
 		include ('includes/ad_header.php');
