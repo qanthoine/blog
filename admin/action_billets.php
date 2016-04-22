@@ -66,7 +66,7 @@ if(isset($_SESSION['ndc']))
 		/////////////////////////////////////////////
 		elseif($_GET['action'] == 2)
 		{
-			if(isset($_GET['mess'])
+			if(isset($_GET['mess']))
 			{
 				?>
 				<div class="message">
