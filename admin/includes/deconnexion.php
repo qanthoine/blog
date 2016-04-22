@@ -2,5 +2,5 @@
 session_start();
 $_SESSION = array();
 session_destroy();
-header('Location: ../../admin');
+header('Location: ../index.php?mess=7');
 ?>	

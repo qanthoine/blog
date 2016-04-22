@@ -25,6 +25,26 @@ if(isset($_GET['billet']) AND $_GET['billet'] >= 1)
 				<div class="body">
 					<center>Liste des Commentaires pour le billet n°<?php echo $id_billet?></center> 
 					<?php
+					if(isset($_GET['mess']))
+					{
+						?>
+						<div class="message">
+							<?php 
+							$mess = $_GET['mess'];
+							switch ($mess) 
+							{
+								case '1':
+									echo 'Merci d\'écrire un commentaire';
+									break;
+								
+								case '2':
+									echo 'Commentaire ajouté !';
+									break;
+							}
+							?>
+						</div>
+						<?php	
+					}	
 					//////////////////////////////////
 					//Mise en place de la pagination//
 					//////////////////////////////////					
@@ -115,7 +135,7 @@ if(isset($_GET['billet']) AND $_GET['billet'] >= 1)
 						} 
 						else
 						{
-							echo 'Il n\'y a pas de commentaires pour cette news.';	
+							echo 'Il n\'y a pas de commentaires pour cette news.';
 						}
 						?>
 					</div>
@@ -147,7 +167,6 @@ if(isset($_GET['billet']) AND $_GET['billet'] >= 1)
 					///////Creation des commentai///////
 					////////////////////////////////////
 					?>
-					<link rel="stylesheet" type="text/css" href="styles/style.css"/>
 					<div class="formulaire">
 						<form method="post" action="includes/commentaires_post.php">
 							<label>Votre Commentaire :</label><br />
@@ -160,7 +179,6 @@ if(isset($_GET['billet']) AND $_GET['billet'] >= 1)
 							<input type='submit' value="Valider"> 
 						</form>
 					</div>
-
 				</div>
 			</body>
 		</html>

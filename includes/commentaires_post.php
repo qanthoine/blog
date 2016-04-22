@@ -1,6 +1,5 @@
 <?php
 include ('bdd.php');
-$id_billet_verif = htmlspecialchars($_POST['billet_id']);
 if(!empty($_POST['commentaire_ecris']) AND !empty($_POST['billet_id']))
 {
   $req = $bdd->query('SELECT prevalidation FROM admin');
@@ -22,21 +21,21 @@ if(!empty($_POST['commentaire_ecris']) AND !empty($_POST['billet_id']))
   {
     $email = '';
   }
-  $pseudo_verif = ucfirst(htmlspecialchars($pseudo));
-  $email_verif = htmlspecialchars($email);
-  $cmts_verif = htmlspecialchars($_POST['commentaire_ecris']);
+  $pseudo_verif = ucfirst($pseudo);
+  $cmts_verif = $_POST['commentaire_ecris'];
+  $id_billet_verif = $_POST['billet_id'];
   $req = $bdd->prepare("INSERT INTO commentaires (auteur, message, date_at, news, email_atr, valide) VALUES (:pseudo, :message, NOW(),:billet, :email, :valide)");
   $req->bindParam('pseudo',$pseudo_verif,PDO::PARAM_STR);
   $req->bindParam('message',$cmts_verif,PDO::PARAM_STR);
   $req->bindParam('billet',$id_billet_verif,PDO::PARAM_INT);
-  $req->bindParam('email',$email_verif,PDO::PARAM_STR);
+  $req->bindParam('email',$email,PDO::PARAM_STR);
   $req->bindParam('valide',$valide,PDO::PARAM_INT);
   $req->execute();
   $req->closeCursor();
-  header('Location: ../commentaires.php?billet='.$id_billet_verif);
+  header('Location: ../commentaires.php?billet='.$id_billet_verif.'&mess=2');
 }
 else
 {
-header('Location: ../commentaires.php?billet='.$id_billet_verif.'&erreur=1');
+  header('Location: ../commentaires.php?billet='.$_POST['billet_id'].'&mess=1');
 }
 ?>

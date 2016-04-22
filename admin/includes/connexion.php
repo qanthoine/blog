@@ -17,19 +17,19 @@ if(!isset($_SESSION['ndc']))
 
     if (!$donnees)
     {
-        header('Location: ../index.php?erreur=1');
+        header('Location: ../index.php?mess=1');
     }
     else
     {
         session_start();
         $_SESSION['ndc'] = $ndc_verif;
-        header('Location: ../index.php');
+        header('Location: ../index.php?mess=5');
     }
     $req->closeCursor();
   }
 }
 else 
 {
-  header('Location: ../index.php');
+  header('Location: ../index.php?mess=6');
 }
 ?>

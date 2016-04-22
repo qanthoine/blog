@@ -20,18 +20,46 @@ if(isset($_SESSION['ndc']))
 <body>
 	<div class="body">
 		<center>
-			<?php 
-			if(isset($_GET['erreur']) AND $_GET['erreur'] == 2) 
+			<?php
+			if(isset($_GET['mess'])
 			{
-				echo 'Le Billet n\'existe pas';
-			} 
-			if(isset($_GET['erreur']) AND $_GET['erreur'] == 3)
-			{
-				echo 'Mauvais token !';
-			} 
-			if(isset($_GET['erreur']) AND $_GET['erreur'] == 4)
-			{
-				echo 'Problèmes aux niveaux des paramètres GET';
+				?>
+				<div class="message">
+					<?php 
+					$mess = $_GET['mess'];
+					switch ($mess)
+					{
+						case '1':
+							echo 'Billet ajouté avec succès !';
+							break;
+						
+						case '2':
+							echo 'Billet modifié avec succès !';
+							break;
+						
+						case '3':
+							echo 'Billet supprimé avec succès !';
+							break;
+						
+						case '4':
+							echo 'Le Billet n\'existe pas';
+							break;
+						
+						case '5':
+							echo 'Mauvais token !';
+							break;
+						
+						case '6':
+							echo 'Problèmes aux niveaux des paramètres GET';
+							break;
+						
+						case '7':
+							echo 'Merci de remplir tout les champs';
+							break;
+					}					
+					?>
+				</div>	
+				<?php 
 			}  
 			////////////////////////////////////////////////////
 			//////////////////Liste des Billet//////////////////
@@ -65,10 +93,6 @@ if(isset($_SESSION['ndc']))
   				?>
   			</table>	
   			<?php
-			if(isset($_GET['erreur']) AND $_GET['erreur'] == 1)
-			{
-				echo 'Merci de remplir tout les champs';
-			}
 			//////////////////////////////////////////////////////
 			//////////////////Creation de Billet//////////////////
 			//////////////////////////////////////////////////////		
@@ -99,7 +123,7 @@ $reponse->closeCursor();
 }
 else 
 {
-	header('Location: index.php?erreur=2');
+	header('Location: index.php?mess=2');
 }
 ?>
 

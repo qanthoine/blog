@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50709
 File Encoding         : 65001
 
-Date: 2016-04-19 18:30:40
+Date: 2016-04-22 15:46:07
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -42,8 +42,9 @@ CREATE TABLE `billets` (
   `auteur` varchar(255) NOT NULL,
   `message` text NOT NULL,
   `date_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of billets
@@ -72,8 +73,10 @@ CREATE TABLE `commentaires` (
   `news` int(11) NOT NULL,
   `email_atr` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
   `valide` tinyint(1) NOT NULL DEFAULT '1',
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+  PRIMARY KEY (`id`),
+  KEY `news` (`news`),
+  CONSTRAINT `billets` FOREIGN KEY (`news`) REFERENCES `billets` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of commentaires

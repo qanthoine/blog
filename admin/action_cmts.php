@@ -61,7 +61,7 @@ if(isset($_SESSION['ndc']))
 			}
 			else
 			{
-				header('Location: commentaires.php?erreur=1');
+				header('Location: commentaires.php?mess=5');
 			}
 		}
 		/////////////////////////////////////////////
@@ -69,9 +69,18 @@ if(isset($_SESSION['ndc']))
 		/////////////////////////////////////////////
 		elseif($_GET['action'] == 2) 
 		{
-			if(isset($_GET['erreur']) AND $_GET['erreur'] == 1)
+			if(isset($_GET['mess'])
 			{
-				echo "Merci de remplir tout les champs";
+				?>
+				<div class="message">
+					<?php
+					if($_GET['mess'] == 1)
+					{
+						echo "Merci de remplir tout les champs";
+					}
+					?>
+				</div>
+				<?php
 			}
 			$time_actuel = time();
 			$login = $_SESSION['ndc'];
@@ -108,7 +117,7 @@ if(isset($_SESSION['ndc']))
 			} 
 			else
 			{
-				header('Location: commentaires.php?erreur=1');
+				header('Location: commentaires.php?mess=5');
 			}
 		}
 		////////////////////////////////////////
@@ -128,11 +137,11 @@ if(isset($_SESSION['ndc']))
 				$req_del->execute();
 				$req_del->closeCursor();
 				$req->closeCursor();
-				header('Location: ../admin/commentaires.php');
+				header('Location: commentaires.php?mess=2');
 			}
 			else
 			{
-				header('Location: commentaires.php?erreur=1');
+				header('Location: commentaires.php?mess=5');
 			}
 		}
 		////////////////////////////////////////
@@ -151,11 +160,11 @@ if(isset($_SESSION['ndc']))
 				$req_val->execute();
 				$req_val->closeCursor();
 				$req->closeCursor();
-				header('Location: ../admin/commentaires.php');
+				header('Location: commentaires.php?mess=3');
 			}
 			else
 			{
-				header('Location: commentaires.php?erreur=1');
+				header('Location: commentaires.php?mess=5');
 			}
 		}			
 	}
@@ -166,7 +175,7 @@ if(isset($_SESSION['ndc']))
 }
 else
 { 
-	header('Location: ../admin');
+	header('Location: index.php?mess=2');
 }
 ?>
 

@@ -58,7 +58,7 @@ if(isset($_SESSION['ndc']))
 			}
 			else
 			{
-				header('Location: billets.php?erreur=2');
+				header('Location: billets.php?mess=4');
 			}
 		}
 		/////////////////////////////////////////////
@@ -66,9 +66,18 @@ if(isset($_SESSION['ndc']))
 		/////////////////////////////////////////////
 		elseif($_GET['action'] == 2)
 		{
-			if(isset($_GET['erreur']) AND $_GET['erreur'] == 1)
+			if(isset($_GET['mess'])
 			{
-				echo "Merci de remplir tout les champs";
+				?>
+				<div class="message">
+					<?php
+					if($_GET['mess'] == 1)
+					{
+						echo "Merci de remplir tout les champs";
+					}
+					?>
+				</div>
+				<?php
 			}
 			$time_actuel = time();
 			$login = $_SESSION['ndc'];
@@ -105,7 +114,7 @@ if(isset($_SESSION['ndc']))
 			}
 			else
 			{
-				header('Location: billets.php?erreur=2');
+				header('Location: billets.php?mess=4');
 			}
 		}
 		////////////////////////////////////////
@@ -124,17 +133,17 @@ if(isset($_SESSION['ndc']))
 				$req_del->execute();
 				$req_del->closeCursor();
 				$req->closeCursor();
-				header('Location: billets.php');
+				header('Location: billets.php?mess=3');
 			}
 			else
 			{
-				header('Location: billets.php?erreur=2');
+				header('Location: billets.php?mess=4');
 			}
 		}			
 	} 
 	else 
 	{ 
-		header('Location: billets.php?erreur=4');
+		header('Location: billets.php?mess=6');
 	}
 }
 else 

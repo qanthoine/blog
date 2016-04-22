@@ -19,11 +19,39 @@ if(isset($_SESSION['ndc']))
 <body>
 	<div class="body">
   		<center>
-  		<?php
+  			<?php
+  			if(isset($_GET['mess']))
+  			{
+  				?>
+  				<div class="message">
+  					<?php
+  					$mess = $_GET['mess'];
+					switch($mess)
+					{
+						case '1':
+							echo 'Commentaire modifié avec succès !';
+							break;
+						case '2':
+							echo 'Commentaire supprimé avec succès !';
+							break;
+						case '3':
+							echo 'Commentaire validé avec succès !';
+							break;
+						case '4':
+							echo 'La validation des commentaires est modifiée !';
+							break;
+						case '5':
+							echo "Le commentaire n'existe pas";
+							break;
+					}
+					?>
+				</div>
+			<?php
+			}
   			////////////////////////////////////////////////////
 			//////////////////Liste des Commen//////////////////
 			////////////////////////////////////////////////////
-  		?>
+  			?>
 	  		<h1>Affichage des commentaires</h1>
 	  		<table>
 	     		<tr>
@@ -63,11 +91,7 @@ if(isset($_SESSION['ndc']))
  		<?php		
 		//////////////////////////////////////////////////////
 		//////////////////Validation des Com//////////////////
-		//////////////////////////////////////////////////////	
-		if (isset($_GET['erreur']) AND $_GET['erreur'] == 1)
-		{
-			echo "Le commentaire n'existe pas";
-		}
+		//////////////////////////////////////////////////////
 		$time_actuel = time();
 		$login = $_SESSION['ndc'];
 		$token = sha1($time_actuel.$login.$time_actuel);
@@ -95,10 +119,9 @@ if(isset($_SESSION['ndc']))
 <?php
 $reponse->closeCursor();
 }
-
 else 
 { 
-	header('Location: ../admin');
+	header('Location: index.php?mess=2');
 }
 ?>
 

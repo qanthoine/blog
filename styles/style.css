@@ -104,3 +104,12 @@ td, th /* Mettre une bordure sur les td ET les th */
 	padding: 3px;
 	text-align: right;
 }
+.message
+{
+	border-radius: 5px;
+	border: 1px solid red;
+	text-align: center;
+	margin-top: 15px;
+	padding: 5px;
+	margin-bottom: 20px;
+}
