@@ -21,7 +21,7 @@ if(isset($_SESSION['ndc']))
 	<div class="body">
 		<center>
 			<?php
-			if(isset($_GET['mess'])
+			if(isset($_GET['mess']))
 			{
 				?>
 				<div class="message">
