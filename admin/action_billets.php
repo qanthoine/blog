@@ -51,8 +51,9 @@ if(isset($_SESSION['ndc']))
 					</p>
 					<font size="2">
 						<?php echo 'Ecris par '.$auteur.' le '.$date_f.''; ?>
-					</font>	
+					</font>
 				</div>
+				<a href="billets.php"> <input type="button" value="Retour">	
 				<?php
 				$reponse->closeCursor();
 			}
