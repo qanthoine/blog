@@ -12,6 +12,8 @@
             if(isset($_SESSION['ndc']))
             {
                ?>
+               <li><a href="billets.php">Gestion des Billets</a></li>
+               <li><a href="commentaires.php">Gestion des Commentaires</a></li>
         	   <li><a href="includes/deconnexion.php">Deconnexion</a></li>
                <?php 
             } 
