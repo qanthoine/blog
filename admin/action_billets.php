@@ -100,11 +100,11 @@ if(isset($_SESSION['ndc']))
 				<div class="formulaire">
 				<form method="post" action="includes/formulaires_post.php?formulaire=2">
 					<label>Titre :</label>
-					<input type="text" name="titre" value="<?php echo $titre ?>" /><br /><br />
+					<input type="text" name="titre" value="<?php echo $titre ?>" required/><br /><br />
 					<label>Texte :</label><br />
-					<textarea name="billet_ecris" rows="20" cols="180"><?php echo $message; ?></textarea><br>
+					<textarea name="billet_ecris" rows="20" cols="180" required><?php echo $message;?></textarea><br>
 					<label>Auteur :</label>
-					<input type="text" name="auteur" value="<?php echo $auteur ?>" /><br /><br /><br />
+					<input type="text" name="auteur" value="<?php echo $auteur ?>" required /><br /><br /><br />
 					<input type="hidden" name="billet_id" value="<?php echo $billet;?>" />
 					<input type="hidden" name="token" value="<?php echo $token;?>" />
 					<input type='submit' value="Valider">

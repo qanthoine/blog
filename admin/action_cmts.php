@@ -102,9 +102,9 @@ if(isset($_SESSION['ndc']))
 				<div class="formulaire">
 					<form method="post" action="includes/formulaires_post.php?formulaire=3">
 						<label>Auteur :</label>
-						<input type="text" name="auteur" value="<?php echo $auteur ?>" /><br /><br /><br />
+						<input type="text" name="auteur" value="<?php echo $auteur ?>"/><br /><br /><br />
 						<label>Commentaire :</label><br />
-						<textarea name="cmts_ecris" rows="20" cols="180"><?php echo $message; ?></textarea><br>
+						<textarea name="cmts_ecris" rows="20" cols="180" required><?php echo $message; ?></textarea><br>
 						<label>Statut :</label>
 						<input type="radio" name="cmts_publication" value="1" id="valide" <?php if($valide == '1'){?> checked="checked" <?php } ?> /> <label for="oui">Publier</label>
 						<input type="radio" name="cmts_publication" value="0" id="prevalide" <?php if($valide == '0'){?>checked="checked" <?php } ?> /> <label for="non">Masquer</label><br><br><br>

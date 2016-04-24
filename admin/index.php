@@ -61,9 +61,9 @@
                         <h1>Interface de Connexion</h1>
                         <form action='includes/connexion.php' method='post'>
                             Votre Nom de Compte : <br>
-                            <input type='text' name='ndc'/><br>
+                            <input type='text' name='ndc' required/><br>
                             Votre Mot de passe : <br>
-                            <input type='password' name='mdp'/><br>
+                            <input type='password' name='mdp' required/><br>
                             <input type='submit' value="Connexion">
                         </form>
                     </html>

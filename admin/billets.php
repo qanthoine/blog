@@ -106,11 +106,11 @@ if(isset($_SESSION['ndc']))
 			<div class="formulaire">
 				<form method="post" action="includes/formulaires_post.php?formulaire=1">
 					<label>Titre :</label>
-					<input type="text" name="titre"/>
+					<input type="text" name="titre" required/>
 					<label>Auteur :</label>
-					<input type="text" name="auteur" value="Admin"/><br /><br /><br />
+					<input type="text" name="auteur" value="Admin" required/><br /><br /><br />
 					<label>Ecrire le nouveau Billet :</label><br />
-					<textarea name="billet_ecris" rows="20" cols="180"></textarea><br>
+					<textarea name="billet_ecris" rows="20" cols="180" required></textarea><br>
 					<input type="hidden" name="token" value ="<?php echo $token;?>"/>
 					<input type='submit' value="Valider"> 
 				</form>

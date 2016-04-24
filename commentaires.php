@@ -170,7 +170,7 @@ if(isset($_GET['billet']) AND $_GET['billet'] >= 1)
 					<div class="formulaire">
 						<form method="post" action="includes/commentaires_post.php">
 							<label>Votre Commentaire :</label><br />
-							<textarea name="commentaire_ecris" rows="8" cols="180"></textarea><br>
+							<textarea name="commentaire_ecris" rows="8" cols="180" required></textarea><br>
 							<label>Votre Pseudo :</label>
 							<input type="text" name="pseudo" placeholder="Facultatif"/>
 							<label>Votre Email :</label>
