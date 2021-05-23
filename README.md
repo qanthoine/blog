@@ -1,8 +1,5 @@
 TP BLOG - ANTHOINE Quentin
 <br/>
-<a href="http://web-svenning.fr">Site Web</a>
-<br/>
-<br/>
 Pour l'installation : 
 <br/>
 -Rendez-vous dans Configuration à lire<br/>
